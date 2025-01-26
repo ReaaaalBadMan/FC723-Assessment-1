@@ -5,7 +5,11 @@ class euclideanalgorithm:
             a, b = b, a % b # a will equal b and b will be the remainder of a/b
         return a
 
-if __name__ == "__main__": #only runs if file is main script
-    # example usage with random numbers
-    gcd_result = euclideanalgorithm.get_gcd(64, 24)
-    print("The GCD of 64 and 24 is:", gcd_result)
+if __name__ == "__main__": #running the code with user inputs
+    try:
+        num1 = int(input("Enter the first positive integer: ")) #takes first input
+        num2 = int(input("Enter the second positive integer: ")) #takes second input
+        gcd_result = euclideanalgorithm.get_gcd(num1, num2) #applies get_gcd function
+        print(f"The GCD of {num1} and {num2} is: {gcd_result}") #print result
+    except ValueError: #makes sure values are correct
+        print("Invalid input. Please ensure you enter positive integers.")
